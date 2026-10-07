@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "preferences": {
+    "destination": {
+      "value": "tiktok",
+      "confirmed_in": [
+        "remax-belgrano"
+      ],
+      "updated_at": "2026-10-07T21:12:07.525Z"
+    },
+    "aspect": {
+      "value": "1080x1920",
+      "confirmed_in": [
+        "remax-belgrano"
+      ],
+      "updated_at": "2026-10-07T21:12:07.588Z"
+    },
+    "language": {
+      "value": "es",
+      "confirmed_in": [
+        "remax-belgrano"
+      ],
+      "updated_at": "2026-10-07T21:12:07.645Z"
+    },
+    "flow": {
+      "value": "companion",
+      "confirmed_in": [
+        "remax-belgrano"
+      ],
+      "updated_at": "2026-10-07T21:12:07.702Z"
+    },
+    "storyboard": {
+      "value": "no",
+      "confirmed_in": [
+        "remax-belgrano"
+      ],
+      "updated_at": "2026-10-07T21:12:07.760Z"
+    },
+    "voice": {
+      "value": "ef_dora",
+      "confirmed_in": [
+        "remax-belgrano"
+      ],
+      "updated_at": "2026-10-07T21:12:07.822Z"
+    }
+  },
+  "sightings": {}
+}

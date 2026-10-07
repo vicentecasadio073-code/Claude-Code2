@@ -1,0 +1,152 @@
+[
+{
+"scene": "gancho",
+"t": 0.05,
+"end": 1.7,
+"text": "¿Alguna vez fuiste al Barrio Chino?"
+},
+{
+"scene": "gancho",
+"t": 1.7,
+"end": 2.83,
+"text": "Quedate, que te cuento"
+},
+{
+"scene": "gancho",
+"t": 2.83,
+"end": 4.0,
+"text": "cómo está Belgrano hoy."
+},
+{
+"scene": "historia",
+"t": 4.05,
+"end": 5.95,
+"text": "El Barrio Chino nació en los 80"
+},
+{
+"scene": "historia",
+"t": 5.95,
+"end": 7.66,
+"text": "y hoy es un símbolo de Belgrano."
+},
+{
+"scene": "historia",
+"t": 7.66,
+"end": 8.97,
+"text": "Antes era zona de paso."
+},
+{
+"scene": "historia",
+"t": 8.97,
+"end": 9.87,
+"text": "Ahora no para."
+},
+{
+"scene": "sectores",
+"t": 10.1,
+"end": 11.93,
+"text": "Y hay zonas que no te podés perder:"
+},
+{
+"scene": "sectores",
+"t": 11.93,
+"end": 12.64,
+"text": "Barrancas,"
+},
+{
+"scene": "sectores",
+"t": 12.64,
+"end": 13.36,
+"text": "Juramento,"
+},
+{
+"scene": "sectores",
+"t": 13.36,
+"end": 13.98,
+"text": "Cabildo."
+},
+{
+"scene": "prueba",
+"t": 15.1,
+"end": 16.2,
+"text": "En RE/MAX vendimos"
+},
+{
+"scene": "prueba",
+"t": 16.2,
+"end": 18.02,
+"text": "320 departamentos"
+},
+{
+"scene": "prueba",
+"t": 18.02,
+"end": 18.98,
+"text": "en 6 meses."
+},
+{
+"scene": "precios",
+"t": 20.1,
+"end": 21.11,
+"text": "Monoambientes,"
+},
+{
+"scene": "precios",
+"t": 21.11,
+"end": 23.27,
+"text": "US$ 2.800 el metro."
+},
+{
+"scene": "precios",
+"t": 23.27,
+"end": 24.63,
+"text": "Dos y tres ambientes,"
+},
+{
+"scene": "precios",
+"t": 24.63,
+"end": 25.95,
+"text": "US$ 2.700."
+},
+{
+"scene": "valor",
+"t": 27.1,
+"end": 29.16,
+"text": "Alta ocupación en alquiler temporario,"
+},
+{
+"scene": "valor",
+"t": 29.16,
+"end": 30.14,
+"text": "reventa sólida."
+},
+{
+"scene": "valor",
+"t": 30.14,
+"end": 31.46,
+"text": "Y también para comprar"
+},
+{
+"scene": "valor",
+"t": 31.46,
+"end": 32.86,
+"text": "y quedarte para siempre."
+},
+{
+"scene": "cta",
+"t": 34.1,
+"end": 35.16,
+"text": "Comentá BELGRANO"
+},
+{
+"scene": "cta",
+"t": 35.16,
+"end": 37.38,
+"text": "si querés comprar o vender en el barrio,"
+},
+{
+"scene": "cta",
+"t": 37.38,
+"end": 39.22,
+"text": "y te mando las mejores opciones."
+}
+]
