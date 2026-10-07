@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+        }
+        #bg-fill {
+          position: absolute;
+          inset: 0;
+          background: #0a2a78;
+        }
+        #bg-glow {
+          position: absolute;
+          left: -200px;
+          top: 300px;
+          width: 1480px;
+          height: 1480px;
+          border-radius: 50%;
+          background: radial-gradient(circle, rgba(40, 92, 214, 0.75) 0%, rgba(40, 92, 214, 0) 62%);
+        }
+        #bg-grid {
+          position: absolute;
+          left: -120px;
+          top: -240px;
+          width: 1320px;
+          height: 2640px;
+          background-image:
+            linear-gradient(rgba(247, 248, 252, 0.12) 2px, transparent 2px),
+            linear-gradient(90deg, rgba(247, 248, 252, 0.12) 2px, transparent 2px);
+          background-size: 120px 120px;
+        }
+        #bg-ghost-wrap {
+          position: absolute;
+          left: 760px;
+          top: 1900px;
+          width: 3000px;
+          height: 600px;
+          transform: rotate(-90deg);
+          transform-origin: left top;
+        }
+        #bg-ghost {
+          display: block;
+          font-family: "League Gothic", sans-serif;
+          font-size: 560px;
+          line-height: 1;
+          white-space: nowrap;
+          color: transparent;
+          -webkit-text-stroke: 3px rgba(247, 248, 252, 0.16);
+        }
+        #bg-stripes {
+          position: absolute;
+          left: -300px;
+          top: -260px;
+          width: 900px;
+          height: 420px;
+          overflow: hidden;
+          transform: rotate(-24deg);
+        }
+        #bg-stripes-inner {
+          position: absolute;
+          left: -440px;
+          top: 0;
+          width: 1800px;
+          height: 420px;
+          background-image: repeating-linear-gradient(90deg, rgba(227, 32, 44, 0.55) 0 14px, transparent 14px 44px);
+        }
+      </style>
+      <div data-hf-id="hf-dzqo" id="root" data-composition-id="bg" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-02i2" id="bg-fill"></div>
+        <div data-hf-id="hf-xjhp" id="bg-glow" data-layout-ignore=""></div>
+        <div data-hf-id="hf-gtgm" id="bg-grid" data-layout-ignore=""></div>
+        <div data-hf-id="hf-2fwh" id="bg-stripes" data-layout-allow-overflow="" data-layout-ignore=""><div data-hf-id="hf-g3ru" id="bg-stripes-inner"></div></div>
+        <div data-hf-id="hf-yagp" id="bg-ghost-wrap" data-layout-ignore="" aria-hidden="true">
+          <span data-hf-id="hf-x2ar" id="bg-ghost" data-layout-ignore="">BELGRANO · BELGRANO</span>
+        </div>
+      </div>
+      <script>
+        (() => {
+          const D = 40;
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#bg-grid", { y: 0 }, { y: 240, duration: D, ease: "none" }, 0);
+          tl.fromTo("#bg-ghost", { x: 0 }, { x: -1400, duration: D, ease: "none" }, 0);
+          tl.fromTo("#bg-glow", { scale: 0.92, opacity: 0.8 }, { scale: 1.1, opacity: 1, duration: 2, ease: "sine.inOut", yoyo: true, repeat: Math.max(0, Math.floor(D / 2) - 1) }, 0);
+          tl.fromTo("#bg-stripes-inner", { x: 0 }, { x: 440, duration: D, ease: "none" }, 0);
+          tl.fromTo("#bg-stripes", { opacity: 0.7 }, { opacity: 1, duration: 1, ease: "sine.inOut", yoyo: true, repeat: Math.max(0, Math.floor(D / 1) - 1) }, 0);
+          window.__timelines["bg"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

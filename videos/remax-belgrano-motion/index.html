@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, height=1920">
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #0a2a78;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #0a2a78;
+      }
+      [data-composition-id="main"] > div[data-composition-src] {
+        position: absolute;
+        inset: 0;
+      }
+      #el-bg { z-index: 0; }
+      .scene-host { z-index: 1; }
+      #el-wipes { z-index: 5; }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-z6y4" id="root" data-composition-id="main" data-start="0" data-duration="40" data-width="1080" data-height="1920">
+      <div data-hf-id="hf-zrad" id="el-bg" data-composition-id="bg" data-composition-src="compositions/bg.html" data-start="0" data-duration="40" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+
+      <div data-hf-id="hf-6277" id="el-s1" class="scene-host" data-composition-id="s1-gancho" data-composition-src="compositions/s1-gancho.html" data-start="0" data-duration="4" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div data-hf-id="hf-ka6m" id="el-s2" class="scene-host" data-composition-id="s2-historia" data-composition-src="compositions/s2-historia.html" data-start="4" data-duration="6" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div data-hf-id="hf-wqk9" id="el-s3" class="scene-host" data-composition-id="s3-sectores" data-composition-src="compositions/s3-sectores.html" data-start="10" data-duration="5" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div data-hf-id="hf-v8ml" id="el-s4" class="scene-host" data-composition-id="s4-prueba" data-composition-src="compositions/s4-prueba.html" data-start="15" data-duration="5" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div data-hf-id="hf-qrsk" id="el-s5" class="scene-host" data-composition-id="s5-precios" data-composition-src="compositions/s5-precios.html" data-start="20" data-duration="7" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div data-hf-id="hf-c43u" id="el-s6" class="scene-host" data-composition-id="s6-valor" data-composition-src="compositions/s6-valor.html" data-start="27" data-duration="7" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div data-hf-id="hf-7bck" id="el-s7" class="scene-host" data-composition-id="s7-cta" data-composition-src="compositions/s7-cta.html" data-start="34" data-duration="6" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+
+      <div data-hf-id="hf-ur16" id="el-wipes" data-composition-id="wipes" data-composition-src="compositions/wipes.html" data-start="0" data-duration="40" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+
+      <audio data-hf-id="hf-m3mk" id="music" src="assets/bgm.wav" data-start="0" data-duration="40" data-track-index="10" data-volume="1"></audio>
+    </div>
+    <script>
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

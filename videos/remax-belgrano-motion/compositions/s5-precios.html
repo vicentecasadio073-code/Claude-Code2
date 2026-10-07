@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+        }
+        #r-stage {
+          position: absolute;
+          left: 90px;
+          right: 120px;
+          top: 200px;
+          bottom: 330px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .r-word {
+          font-family: "League Gothic", sans-serif;
+          color: #f7f8fc;
+          line-height: 0.88;
+          text-transform: uppercase;
+          display: block;
+          white-space: nowrap;
+        }
+        .r-mono {
+          font-family: "Space Mono", monospace;
+          font-weight: 700;
+          font-size: 34px;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: #f7f8fc;
+          display: block;
+        }
+        #r-h1 { font-size: 170px; }
+        #r-h2-wrap { position: relative; display: block; padding: 8px 22px 2px; }
+        #r-h2-bg { position: absolute; inset: 0; background: #e3202c; display: block; transform-origin: left center; }
+        #r-h2 { position: relative; font-size: 170px; }
+        #r-sub { margin-top: 18px; margin-bottom: 26px; }
+        .r-row { width: 870px; margin-top: 26px; }
+        .r-label { margin-bottom: 10px; }
+        .r-track { position: relative; width: 870px; height: 104px; }
+        .r-bar {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 104px;
+          background: #f7f8fc;
+          border-radius: 10px;
+          display: block;
+          transform-origin: left center;
+        }
+        .r-val {
+          position: absolute;
+          left: 26px;
+          top: 10px;
+          font-size: 96px;
+          color: #0a2a78;
+          font-variant-numeric: tabular-nums;
+        }
+        #r-row4 .r-bar { background: #e3202c; }
+        #r-row4 .r-val { color: #f7f8fc; }
+        #r-row4 .r-label { color: #f7f8fc; }
+        #r-new-badge {
+          position: absolute;
+          right: 20px;
+          top: 18px;
+          font-family: "Space Mono", monospace;
+          font-weight: 700;
+          font-size: 32px;
+          letter-spacing: 0.1em;
+          color: #e3202c;
+          background: #f7f8fc;
+          padding: 10px 16px;
+          border-radius: 8px;
+          display: block;
+        }
+      </style>
+      <div data-hf-id="hf-5wvl" id="root" data-composition-id="s5-precios" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-re4o" id="r-stage">
+          <div data-hf-id="hf-e7y1" id="r-h1" class="r-word">Precio</div>
+          <div data-hf-id="hf-89ad" id="r-h2-wrap" class="r-word"><i data-hf-id="hf-0eak" id="r-h2-bg"></i><div data-hf-id="hf-somj" id="r-h2" class="r-word">promedio</div></div>
+          <div data-hf-id="hf-zub8" id="r-sub" class="r-mono">US$ por m² · Belgrano</div>
+
+          <div data-hf-id="hf-umhp" id="r-row1" class="r-row">
+            <div data-hf-id="hf-dlv8" class="r-label r-mono">Monoambientes</div>
+            <div data-hf-id="hf-ylbk" class="r-track"><i data-hf-id="hf-uccs" id="r-bar1" class="r-bar" style="width: 762px"></i><div data-hf-id="hf-8jb0" id="r-val1" class="r-val r-word">2.800</div></div>
+          </div>
+          <div data-hf-id="hf-yklq" id="r-row2" class="r-row">
+            <div data-hf-id="hf-18xp" class="r-label r-mono">2 y 3 ambientes</div>
+            <div data-hf-id="hf-0j7s" class="r-track"><i data-hf-id="hf-4yog" id="r-bar2" class="r-bar" style="width: 734px"></i><div data-hf-id="hf-4j4c" id="r-val2" class="r-val r-word">2.700</div></div>
+          </div>
+          <div data-hf-id="hf-2ipr" id="r-row3" class="r-row">
+            <div data-hf-id="hf-0649" class="r-label r-mono">4 ambientes</div>
+            <div data-hf-id="hf-zcap" class="r-track"><i data-hf-id="hf-36gr" id="r-bar3" class="r-bar" style="width: 653px"></i><div data-hf-id="hf-jfty" id="r-val3" class="r-val r-word">2.400</div></div>
+          </div>
+          <div data-hf-id="hf-6gts" id="r-row4" class="r-row">
+            <div data-hf-id="hf-my9v" class="r-label r-mono">Monoambientes a estrenar</div>
+            <div data-hf-id="hf-zqlq" class="r-track"><i data-hf-id="hf-rvsl" id="r-bar4" class="r-bar" style="width: 870px"></i><div data-hf-id="hf-n0hv" id="r-val4" class="r-val r-word">+3.200</div><div data-hf-id="hf-7ags" id="r-new-badge">Más de</div></div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (() => {
+          const tl = gsap.timeline({ paused: true });
+          const fmt = (n) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+          tl.fromTo("#r-h1", { y: 140, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "circ.out" }, 0.15);
+          tl.fromTo("#r-h2-bg", { scaleX: 0 }, { scaleX: 1, duration: 0.25, ease: "power3.out" }, 0.45);
+          tl.fromTo("#r-h2", { x: -300, opacity: 0 }, { x: 0, opacity: 1, duration: 0.35, ease: "expo.out" }, 0.5);
+          tl.fromTo("#r-sub", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power2.out" }, 0.8);
+
+          const rows = [
+            [1, 2800, 1.0, ""],
+            [2, 2700, 2.0, ""],
+            [3, 2400, 3.0, ""],
+            [4, 3200, 4.5, "+"],
+          ];
+          rows.forEach(([i, v, at, pre]) => {
+            tl.fromTo(`#r-row${i} .r-label`, { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.25, ease: "power2.out" }, at);
+            tl.fromTo(`#r-bar${i}`, { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, at + 0.05);
+            const st = { v: 0 };
+            const el = document.getElementById(`r-val${i}`);
+            tl.fromTo(st, { v: 0 }, { v, duration: 0.7, ease: "power3.out", onUpdate: () => { el.textContent = pre + fmt(st.v); } }, at + 0.05);
+            tl.fromTo(`#r-val${i}`, { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, at + 0.1);
+          });
+          tl.fromTo("#r-new-badge", { scale: 0, rotation: -12, opacity: 0 }, { scale: 1, rotation: -4, opacity: 1, duration: 0.35, ease: "back.out(2.2)" }, 5.0);
+          tl.fromTo("#r-row4", { scale: 1 }, { scale: 1.04, duration: 0.15, ease: "power2.out", yoyo: true, repeat: 1 }, 5.0);
+          tl.fromTo("#r-row4", { x: 0 }, { x: -8, duration: 0.05, ease: "none", yoyo: true, repeat: 5, immediateRender: false }, 4.85);
+          window.__timelines["s5-precios"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

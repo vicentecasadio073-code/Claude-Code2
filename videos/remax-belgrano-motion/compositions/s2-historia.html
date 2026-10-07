@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+        }
+        #h-stage {
+          position: absolute;
+          left: 90px;
+          right: 120px;
+          top: 200px;
+          bottom: 330px;
+        }
+        .h-group {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .h-word {
+          font-family: "League Gothic", sans-serif;
+          color: #f7f8fc;
+          line-height: 0.88;
+          text-transform: uppercase;
+          display: block;
+          white-space: nowrap;
+        }
+        .h-mono {
+          font-family: "Space Mono", monospace;
+          font-weight: 700;
+          font-size: 40px;
+          letter-spacing: 0.18em;
+          color: #f7f8fc;
+          text-transform: uppercase;
+          display: block;
+        }
+        .h-tag {
+          position: relative;
+          display: block;
+          padding: 8px 22px 2px;
+        }
+        .h-tag-bg {
+          position: absolute;
+          inset: 0;
+          background: #e3202c;
+          display: block;
+          transform-origin: left center;
+        }
+        .h-tag-text {
+          position: relative;
+          display: block;
+        }
+        #h-l1 { font-size: 150px; }
+        #h-80 {
+          font-size: 620px;
+          line-height: 0.82;
+          text-shadow: 20px 20px 0 #e3202c;
+          margin-top: 10px;
+        }
+        #h-hoy1 { font-size: 140px; margin-top: 40px; }
+        #h-hoy2 { font-size: 140px; margin-top: 8px; }
+        #h-b { bottom: 0; justify-content: center; }
+        #h-antes { margin-top: 10px; }
+        #h-paso-wrap { position: relative; display: block; margin-top: 10px; }
+        #h-paso { font-size: 200px; color: rgba(247, 248, 252, 0.88); }
+        #h-strike {
+          position: absolute;
+          left: -12px;
+          right: -12px;
+          top: 46%;
+          height: 24px;
+          background: #e3202c;
+          display: block;
+          transform-origin: left center;
+        }
+        #h-ahora { margin-top: 90px; }
+        #h-nopara-wrap {
+          position: relative;
+          display: block;
+          margin-top: 16px;
+          width: 870px;
+        }
+        #h-panel {
+          position: absolute;
+          inset: 0;
+          background: #e3202c;
+          display: block;
+          transform-origin: left center;
+        }
+        #h-nopara {
+          position: relative;
+          font-size: 280px;
+          padding: 24px 28px 4px;
+        }
+        .h-speed {
+          position: absolute;
+          height: 16px;
+          background: #f7f8fc;
+          display: block;
+          border-radius: 8px;
+        }
+      </style>
+      <div data-hf-id="hf-vmfm" id="root" data-composition-id="s2-historia" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-suuy" id="h-stage">
+          <div data-hf-id="hf-zibi" id="h-a" class="h-group">
+            <div data-hf-id="hf-jhps" id="h-l1" class="h-word">Nació en los</div>
+            <div data-hf-id="hf-qqnf" id="h-80" class="h-word">'80</div>
+            <div data-hf-id="hf-kxm8" id="h-hoy1" class="h-word h-tag"><i data-hf-id="hf-h4yd" id="h-hoy1-bg" class="h-tag-bg"></i><span data-hf-id="hf-yi3s" id="h-hoy1-t" class="h-tag-text">Hoy es símbolo</span></div>
+            <div data-hf-id="hf-ybpr" id="h-hoy2" class="h-word">de Belgrano</div>
+          </div>
+          <div data-hf-id="hf-vk7h" id="h-b" class="h-group">
+            <div data-hf-id="hf-8t93" id="h-antes" class="h-mono">Antes</div>
+            <div data-hf-id="hf-0jy4" id="h-paso-wrap">
+              <div data-hf-id="hf-coov" id="h-paso" class="h-word">Zona de paso</div>
+              <i data-hf-id="hf-0g3u" id="h-strike"></i>
+            </div>
+            <div data-hf-id="hf-bqsv" id="h-ahora" class="h-mono">Ahora</div>
+            <div data-hf-id="hf-soh4" id="h-nopara-wrap">
+              <i data-hf-id="hf-8sv2" id="h-panel"></i>
+              <div data-hf-id="hf-ptoa" id="h-nopara" class="h-word">No para.</div>
+              <i data-hf-id="hf-80by" id="h-sp1" class="h-speed" style="left: 720px; top: 60px; width: 110px"></i>
+              <i data-hf-id="hf-8u5g" id="h-sp2" class="h-speed" style="left: 760px; top: 130px; width: 70px"></i>
+              <i data-hf-id="hf-29q1" id="h-sp3" class="h-speed" style="left: 740px; top: 200px; width: 90px"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (() => {
+          const tl = gsap.timeline({ paused: true });
+          // Beat 1-2: NACIÓ EN LOS '80 → HOY ES SÍMBOLO DE BELGRANO
+          tl.fromTo("#h-l1", { x: -500, opacity: 0 }, { x: 0, opacity: 1, duration: 0.35, ease: "expo.out" }, 0.15);
+          tl.fromTo("#h-80", { scale: 1.8, filter: "blur(18px)", opacity: 0 }, { scale: 1, filter: "blur(0px)", opacity: 1, duration: 0.45, ease: "power4.out", transformOrigin: "left center" }, 0.5);
+          tl.fromTo("#h-hoy1-bg", { scaleX: 0 }, { scaleX: 1, duration: 0.25, ease: "power3.out" }, 1.5);
+          tl.fromTo("#h-hoy1-t", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "circ.out" }, 1.55);
+          tl.fromTo("#h-hoy2", { x: 500, opacity: 0 }, { x: 0, opacity: 1, duration: 0.35, ease: "expo.out" }, 2.0);
+          tl.fromTo("#h-80", { x: 0 }, { x: 20, duration: 0.4, ease: "sine.inOut", yoyo: true, repeat: 1, immediateRender: false }, 2.0);
+
+          // Cambio en el beat de 3 s: ANTES ZONA DE PASO → AHORA NO PARA
+          tl.fromTo("#h-a", { opacity: 1, y: 0 }, { opacity: 0, y: -200, duration: 0.2, ease: "power2.in", immediateRender: false }, 2.92);
+          tl.fromTo("#h-antes", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.25, ease: "power2.out" }, 3.0);
+          tl.fromTo("#h-paso", { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }, 3.05);
+          tl.fromTo("#h-strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power2.inOut" }, 3.6);
+          tl.fromTo("#h-paso", { opacity: 1 }, { opacity: 0.45, duration: 0.3, ease: "power1.out", immediateRender: false }, 3.75);
+          tl.fromTo("#h-ahora", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.25, ease: "power2.out" }, 4.45);
+          tl.fromTo("#h-panel", { scaleX: 0 }, { scaleX: 1, duration: 0.25, ease: "power3.out" }, 4.5);
+          tl.fromTo("#h-nopara", { x: -900, skewX: 20, opacity: 0 }, { x: 0, skewX: 0, opacity: 1, duration: 0.4, ease: "expo.out" }, 4.55);
+          ["#h-sp1", "#h-sp2", "#h-sp3"].forEach((s, i) => {
+            tl.fromTo(s, { x: 300, opacity: 0 }, { x: 0, opacity: 1, duration: 0.25, ease: "power2.out" }, 4.75 + i * 0.05);
+            tl.fromTo(s, { x: 0 }, { x: -60, duration: 0.25, ease: "sine.inOut", yoyo: true, repeat: 1, immediateRender: false }, 5.05 + i * 0.05);
+          });
+          tl.fromTo("#h-nopara-wrap", { scale: 1 }, { scale: 1.04, duration: 0.12, ease: "power2.out", yoyo: true, repeat: 1 }, 5.0);
+          tl.fromTo("#h-nopara-wrap", { scale: 1 }, { scale: 1.04, duration: 0.12, ease: "power2.out", yoyo: true, repeat: 1, immediateRender: false }, 5.5);
+          window.__timelines["s2-historia"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

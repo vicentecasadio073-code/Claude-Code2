@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+        }
+        #g-stage {
+          position: absolute;
+          left: 90px;
+          right: 120px;
+          top: 190px;
+          bottom: 330px;
+        }
+        #g-gate {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 380px;
+          height: 260px;
+          display: block;
+        }
+        #g-gate path {
+          fill: none;
+          stroke: #e3202c;
+          stroke-width: 12;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          stroke-dasharray: 1;
+          stroke-dashoffset: 1;
+        }
+        .g-group {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 300px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .g-word {
+          font-family: "League Gothic", sans-serif;
+          color: #f7f8fc;
+          line-height: 0.88;
+          letter-spacing: 0.005em;
+          text-transform: uppercase;
+          display: block;
+          white-space: nowrap;
+        }
+        .g-tag {
+          position: relative;
+          display: block;
+          padding: 6px 22px 2px;
+        }
+        .g-tag-bg {
+          position: absolute;
+          inset: 0;
+          background: #e3202c;
+          display: block;
+          transform-origin: left center;
+        }
+        .g-tag-text {
+          position: relative;
+          display: block;
+        }
+        #g-l1 { font-size: 150px; }
+        #g-l2 { font-size: 340px; }
+        #g-l3 { font-size: 340px; }
+        #g-m1 { font-size: 190px; }
+        #g-m2 { font-size: 170px; }
+        #g-m3 { font-size: 300px; }
+        #g-m4 { font-size: 300px; }
+        #g-underline {
+          display: block;
+          width: 300px;
+          height: 22px;
+          margin-top: 10px;
+          background: #e3202c;
+          transform-origin: left center;
+        }
+      </style>
+      <div data-hf-id="hf-3ebo" id="root" data-composition-id="s1-gancho" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-xn5l" id="g-stage">
+          <svg data-hf-id="hf-ugmd" id="g-gate" viewBox="0 0 380 260">
+            <path data-hf-id="hf-tmbn" pathLength="1" d="M14 56 Q190 4 366 56" />
+            <path data-hf-id="hf-tcl8" pathLength="1" d="M48 88 Q190 50 332 88" />
+            <path data-hf-id="hf-mx1c" pathLength="1" d="M74 110 L306 110" />
+            <path data-hf-id="hf-386t" pathLength="1" d="M98 88 L98 252" />
+            <path data-hf-id="hf-3gv3" pathLength="1" d="M282 88 L282 252" />
+            <path data-hf-id="hf-qzxz" pathLength="1" d="M156 110 L156 252" />
+            <path data-hf-id="hf-pe2n" pathLength="1" d="M224 110 L224 252" />
+            <path data-hf-id="hf-ak2h" pathLength="1" d="M80 162 L300 162" />
+          </svg>
+          <div data-hf-id="hf-3o3w" id="g-a" class="g-group">
+            <div data-hf-id="hf-3om7" id="g-l1" class="g-word g-tag"><i data-hf-id="hf-idxx" id="g-l1-bg" class="g-tag-bg"></i><span data-hf-id="hf-ihpt" id="g-l1-t" class="g-tag-text">¿Fuiste al</span></div>
+            <div data-hf-id="hf-fto5" id="g-l2" class="g-word">Barrio</div>
+            <div data-hf-id="hf-iezj" id="g-l3" class="g-word">Chino?</div>
+          </div>
+          <div data-hf-id="hf-ejlj" id="g-b" class="g-group">
+            <div data-hf-id="hf-wcbk" id="g-m1" class="g-word g-tag"><i data-hf-id="hf-xkj8" id="g-m1-bg" class="g-tag-bg"></i><span data-hf-id="hf-nu43" id="g-m1-t" class="g-tag-text">Quedate.</span></div>
+            <div data-hf-id="hf-ptix" id="g-m2" class="g-word">Así está</div>
+            <div data-hf-id="hf-ufow" id="g-m3" class="g-word">Belgrano</div>
+            <div data-hf-id="hf-rwhz" id="g-m4" class="g-word">hoy.</div>
+            <i data-hf-id="hf-wkjb" id="g-underline"></i>
+          </div>
+        </div>
+      </div>
+      <script>
+        (() => {
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#g-gate path", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.out", stagger: 0.05 }, 0);
+          tl.fromTo("#g-gate", { y: 0 }, { y: -12, duration: 1, ease: "sine.inOut", yoyo: true, repeat: 3, immediateRender: false }, 0.6);
+
+          // Golpe 1: ¿FUISTE AL / BARRIO / CHINO?
+          tl.fromTo("#g-l1-bg", { scaleX: 0 }, { scaleX: 1, duration: 0.22, ease: "power3.out" }, 0.0);
+          tl.fromTo("#g-l1-t", { x: -120, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "expo.out" }, 0.08);
+          tl.fromTo("#g-l2", { scale: 1.7, filter: "blur(16px)", opacity: 0 }, { scale: 1, filter: "blur(0px)", opacity: 1, duration: 0.4, ease: "power4.out", transformOrigin: "left center" }, 0.5);
+          tl.fromTo("#g-l3", { y: 260, rotation: 6, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 0.45, ease: "circ.out" }, 1.0);
+          tl.fromTo("#g-a", { scale: 1 }, { scale: 1.03, duration: 0.5, ease: "sine.inOut" }, 1.45);
+
+          // Cambio de tokens en el beat de 2 s: QUEDATE. / ASÍ ESTÁ / BELGRANO HOY
+          tl.fromTo("#g-a", { opacity: 1, y: 0 }, { opacity: 0, y: -160, duration: 0.2, ease: "power2.in", immediateRender: false }, 1.95);
+          tl.fromTo("#g-m1-bg", { scaleX: 0 }, { scaleX: 1, duration: 0.22, ease: "power3.out" }, 2.0);
+          tl.fromTo("#g-m1-t", { scale: 1.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "power4.out" }, 2.05);
+          tl.fromTo("#g-m2", { x: -700, opacity: 0 }, { x: 0, opacity: 1, duration: 0.35, ease: "expo.out" }, 2.5);
+          tl.fromTo("#g-m3", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.7)", transformOrigin: "left center" }, 3.0);
+          tl.fromTo("#g-m4", { y: 200, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "circ.out" }, 3.25);
+          tl.fromTo("#g-underline", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power2.inOut" }, 3.5);
+          window.__timelines["s1-gancho"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

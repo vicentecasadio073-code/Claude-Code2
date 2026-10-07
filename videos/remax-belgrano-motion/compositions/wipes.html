@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+        }
+        .w-block {
+          position: absolute;
+          left: -1080px;
+          top: 0;
+          width: 1080px;
+          height: 1920px;
+          display: block;
+        }
+        #w-red { background: #e3202c; }
+        #w-white { background: #f7f8fc; }
+        .w-blind {
+          position: absolute;
+          top: -1920px;
+          width: 136px;
+          height: 1920px;
+          display: block;
+        }
+        .w-blind.r { background: #e3202c; }
+        .w-blind.w { background: #f7f8fc; }
+      </style>
+      <div data-hf-id="hf-8741" id="root" data-composition-id="wipes" data-width="1080" data-height="1920">
+        <i data-hf-id="hf-dbdt" id="w-red" data-layout-allow-overflow="" class="w-block"></i>
+        <i data-hf-id="hf-p237" id="w-white" data-layout-allow-overflow="" class="w-block"></i>
+        <i data-hf-id="hf-if5t" id="w-b0" data-layout-allow-overflow="" class="w-blind r" style="left: 0px"></i>
+        <i data-hf-id="hf-mm64" id="w-b1" data-layout-allow-overflow="" class="w-blind w" style="left: 135px"></i>
+        <i data-hf-id="hf-jypo" id="w-b2" data-layout-allow-overflow="" class="w-blind r" style="left: 270px"></i>
+        <i data-hf-id="hf-w1nm" id="w-b3" data-layout-allow-overflow="" class="w-blind w" style="left: 405px"></i>
+        <i data-hf-id="hf-jwl8" id="w-b4" data-layout-allow-overflow="" class="w-blind r" style="left: 540px"></i>
+        <i data-hf-id="hf-246v" id="w-b5" data-layout-allow-overflow="" class="w-blind w" style="left: 675px"></i>
+        <i data-hf-id="hf-zves" id="w-b6" data-layout-allow-overflow="" class="w-blind r" style="left: 810px"></i>
+        <i data-hf-id="hf-t08f" id="w-b7" data-layout-allow-overflow="" class="w-blind w" style="left: 945px"></i>
+      </div>
+      <script>
+        (() => {
+          const tl = gsap.timeline({ paused: true });
+          // Bloques: cubren justo antes del corte y destapan justo después (el cambio de escena ocurre debajo).
+          const blocks = (T) => {
+            tl.fromTo("#w-red", { x: 0 }, { x: 1080, duration: 0.26, ease: "power3.inOut", immediateRender: false }, T - 0.3);
+            tl.fromTo("#w-white", { x: 0 }, { x: 1080, duration: 0.26, ease: "power3.inOut", immediateRender: false }, T - 0.24);
+            tl.to("#w-red", { x: 2160, duration: 0.28, ease: "power3.inOut" }, T + 0.0);
+            tl.to("#w-white", { x: 2160, duration: 0.28, ease: "power3.inOut" }, T + 0.06);
+          };
+          const blinds = (T) => {
+            for (let i = 0; i < 8; i++) {
+              tl.fromTo("#w-b" + i, { y: 0 }, { y: 1920, duration: 0.22, ease: "power3.inOut", immediateRender: false }, T - 0.36 + i * 0.02);
+              tl.to("#w-b" + i, { y: 3840, duration: 0.24, ease: "power3.inOut" }, T + 0.02 + i * 0.02);
+            }
+          };
+          blocks(4);
+          blocks(10);
+          blinds(15);
+          blocks(20);
+          blocks(27);
+          blinds(34);
+          window.__timelines["wipes"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

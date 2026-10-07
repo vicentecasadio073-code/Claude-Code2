@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+        }
+        #c-stage {
+          position: absolute;
+          left: 90px;
+          right: 120px;
+          top: 200px;
+          bottom: 330px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .c-word {
+          font-family: "League Gothic", sans-serif;
+          color: #f7f8fc;
+          line-height: 0.88;
+          text-transform: uppercase;
+          display: block;
+          white-space: nowrap;
+        }
+        .c-mono {
+          font-family: "Space Mono", monospace;
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          display: block;
+        }
+        #c-title { font-size: 300px; }
+        #c-bubble-row { width: 870px; height: 140px; margin-top: 30px; position: relative; }
+        #c-bubble {
+          position: absolute;
+          right: 0;
+          top: 10px;
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          background: #f7f8fc;
+          border-radius: 40px 40px 8px 40px;
+          padding: 14px 32px 10px;
+        }
+        #c-bubble svg { width: 56px; height: 56px; display: block; }
+        #c-bubble span { font-family: "League Gothic", sans-serif; font-size: 90px; line-height: 1; color: #0a2a78; display: block; }
+        #c-composer {
+          display: flex;
+          align-items: center;
+          gap: 22px;
+          width: 870px;
+          height: 160px;
+          background: #f7f8fc;
+          border-radius: 80px;
+          padding: 0 24px;
+          margin-top: 18px;
+        }
+        #c-avatar { width: 108px; height: 108px; border-radius: 50%; background: #e3202c; display: block; flex: 0 0 108px; }
+        #c-field { flex: 1 1 auto; height: 120px; display: flex; align-items: center; }
+        #c-typed { font-family: "League Gothic", sans-serif; font-size: 130px; line-height: 1; color: #0a2a78; display: block; white-space: nowrap; }
+        #c-caret { width: 8px; height: 100px; background: #0a2a78; display: block; margin-left: 6px; }
+        #c-send { width: 112px; height: 112px; border-radius: 50%; background: #0a2a78; display: flex; align-items: center; justify-content: center; flex: 0 0 112px; }
+        #c-send svg { width: 56px; height: 56px; display: block; }
+        #c-l1 { font-size: 112px; margin-top: 70px; }
+        #c-l2 { font-size: 112px; margin-top: 6px; }
+        #c-l3-wrap { position: relative; display: block; padding: 10px 24px 2px; margin-top: 10px; }
+        #c-l3-bg { position: absolute; inset: 0; background: #e3202c; display: block; transform-origin: left center; }
+        #c-l3 { position: relative; font-size: 140px; }
+        #c-brand { margin-top: 40px; font-size: 36px; color: #0a2a78; background: #f7f8fc; padding: 12px 22px; border-radius: 10px; }
+      </style>
+      <div data-hf-id="hf-4qa2" id="root" data-composition-id="s7-cta" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-exbx" id="c-stage">
+          <div data-hf-id="hf-uuj5" id="c-title" class="c-word">Comentá</div>
+          <div data-hf-id="hf-7s88" id="c-bubble-row">
+            <div data-hf-id="hf-dgjn" id="c-bubble">
+              <svg data-hf-id="hf-tdp7" viewBox="0 0 56 56"><path data-hf-id="hf-o03i" d="M28 50 C8 35 6 22 14 14 C20 8 28 15 28 15 C28 15 36 8 42 14 C50 22 48 35 28 50 Z" fill="#e3202c" /></svg>
+              <span data-hf-id="hf-qovn">BELGRANO</span>
+            </div>
+          </div>
+          <div data-hf-id="hf-4eyv" id="c-composer">
+            <i data-hf-id="hf-tvhm" id="c-avatar"></i>
+            <div data-hf-id="hf-vntb" id="c-field"><span data-hf-id="hf-v9w6" id="c-typed"></span><i data-hf-id="hf-106q" id="c-caret"></i></div>
+            <div data-hf-id="hf-z5mv" id="c-send"><svg data-hf-id="hf-zgez" viewBox="0 0 56 56"><path data-hf-id="hf-rf8q" d="M6 28 L50 8 L38 50 L28 32 Z" fill="#f7f8fc" /></svg></div>
+          </div>
+          <div data-hf-id="hf-oxc4" id="c-l1" class="c-word">Si necesitás servicio</div>
+          <div data-hf-id="hf-90ja" id="c-l2" class="c-word">inmobiliario</div>
+          <div data-hf-id="hf-400e" id="c-l3-wrap" class="c-word"><i data-hf-id="hf-7asm" id="c-l3-bg"></i><div data-hf-id="hf-p3kz" id="c-l3" class="c-word">del mejor nivel</div></div>
+          <div data-hf-id="hf-s0p7" id="c-brand" class="c-mono">RE/MAX · Belgrano</div>
+        </div>
+      </div>
+      <script>
+        (() => {
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#c-title", { scale: 1.7, filter: "blur(16px)", opacity: 0 }, { scale: 1, filter: "blur(0px)", opacity: 1, duration: 0.4, ease: "power4.out", transformOrigin: "left center" }, 0.15);
+          tl.fromTo("#c-composer", { y: 160, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power3.out" }, 0.45);
+          const WORD = "BELGRANO";
+          const st = { v: 0 };
+          const typed = document.getElementById("c-typed");
+          tl.fromTo(st, { v: 0 }, { v: WORD.length, duration: 0.6, ease: "none", onUpdate: () => { typed.textContent = WORD.slice(0, Math.round(st.v)); } }, 0.75);
+          tl.fromTo("#c-caret", { opacity: 1 }, { opacity: 0, duration: 0.25, ease: "steps(1)", yoyo: true, repeat: 21 }, 0.0);
+          tl.fromTo("#c-send", { scale: 1 }, { scale: 0.8, duration: 0.1, ease: "power2.in" }, 1.5);
+          tl.fromTo("#c-send", { scale: 0.8 }, { scale: 1, duration: 0.35, ease: "back.out(3)", immediateRender: false }, 1.6);
+          tl.fromTo("#c-typed", { opacity: 1 }, { opacity: 0, duration: 0.08, ease: "none" }, 1.62);
+          tl.fromTo("#c-bubble", { y: 120, scale: 0.4, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2)", transformOrigin: "right bottom" }, 1.65);
+          tl.fromTo("#c-bubble svg", { scale: 1 }, { scale: 1.35, duration: 0.25, ease: "sine.inOut", yoyo: true, repeat: 7 }, 2.1);
+          tl.fromTo("#c-l1", { x: -900, opacity: 0 }, { x: 0, opacity: 1, duration: 0.35, ease: "expo.out" }, 2.2);
+          tl.fromTo("#c-l2", { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "circ.out" }, 2.5);
+          tl.fromTo("#c-l3-bg", { scaleX: 0 }, { scaleX: 1, duration: 0.25, ease: "power3.out" }, 2.95);
+          tl.fromTo("#c-l3", { scale: 1.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "power4.out", transformOrigin: "left center" }, 3.0);
+          tl.fromTo("#c-brand", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)", transformOrigin: "left center" }, 3.6);
+          tl.fromTo("#c-l3-wrap", { scale: 1 }, { scale: 1.04, duration: 0.25, ease: "sine.inOut", yoyo: true, repeat: 3 }, 4.2);
+          window.__timelines["s7-cta"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
